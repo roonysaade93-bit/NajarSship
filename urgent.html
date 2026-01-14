@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حلول مشاكل الجمارك العالقة | الرائدون للخدمات اللوجستية</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="بضاعتك عالقة في الميناء؟ نحل مشاكل الجمارك في أشدود وحيفا خلال 24 ساعة. استشارة مجانية فورية.">
+    <meta name="keywords" content="حل مشاكل الجمارك, بضاعة عالقة, ميناء أشدود, ميناء حيفا, تخليص جمركي عاجل">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root { 
+            --danger: #e74c3c; 
+            --primary: #1a4731; 
+            --secondary: #c5a021; 
+            --success: #25d366;
+            --white: #ffffff; 
+            --light: #fdfdfd;
+            --gray: #777;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background: var(--light); color: #333; line-height: 1.6; }
+        
+        /* Urgency Bar - creates immediate attention */
+        .urgency-bar { 
+            background: var(--danger); 
+            color: white; 
+            text-align: center; 
+            padding: 12px 5%; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            animation: pulse-subtle 2s infinite;
+        }
+        
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
+        }
+        
+        /* Hero Section */
+        .hero-urgent { 
+            padding: 60px 5%; 
+            text-align: center; 
+            background: var(--white); 
+            border-bottom: 3px solid #eee; 
+        }
+        .hero-urgent h1 { 
+            color: var(--danger); 
+            font-size: clamp(2rem, 4vw, 2.8rem); 
+            margin-bottom: 20px; 
+            font-weight: 900;
+            line-height: 1.3;
+        }
+        .hero-urgent p { 
+            font-size: clamp(1.1rem, 2vw, 1.4rem); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            color: #555; 
+        }
+
+        /* Pain Points Section */
+        .pain-points { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 25px; 
+            padding: 50px 8%; 
+            background: #fafafa;
+        }
+        .pain-card { 
+            background: #fff5f5; 
+            padding: 30px; 
+            border-radius: 15px; 
+            border-right: 5px solid var(--danger);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .pain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .pain-card i { 
+            color: var(--danger); 
+            font-size: 2.5rem; 
+            margin-bottom: 15px; 
+            display: block;
+        }
+        .pain-card h3 {
+            color: var(--danger);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .pain-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Solution Box */
+        .solution-box { 
+            background: linear-gradient(135deg, var(--primary) 0%, #0d2919 100%);
+            color: white; 
+            padding: 60px 8%; 
+            text-align: center; 
+            margin: 50px 0 0 0;
+            position: relative;
+        }
+        .solution-box::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: var(--light);
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+        .solution-box h2 { 
+            color: var(--secondary); 
+            font-size: clamp(1.8rem, 3vw, 2.2rem); 
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+        .solution-box p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Form Container */
+        .form-container { 
+            max-width: 650px; 
+            margin: -80px auto 60px; 
+            background: white; 
+            padding: 45px; 
+            border-radius: 20px; 
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15); 
+            border: 3px solid var(--secondary);
+            position: relative;
+            z-index: 10;
+        }
+        .form-container h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        
+        /* Form Inputs */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+        input, textarea { 
+            width: 100%; 
+            padding: 16px; 
+            border: 2px solid #e0e0e0; 
+            border-radius: 12px; 
+            font-family: 'Cairo'; 
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(197,160,33,0.1);
+        }
+        input.error, textarea.error {
+            border-color: var(--danger);
+        }
+        .error-message {
+            color: var(--danger);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        .error-message.show {
+            display: block;
+        }
+        
+        /* Submit Button */
+        .btn-urgent { 
+            background: var(--success); 
+            color: white; 
+            padding: 20px; 
+            border: none; 
+            border-radius: 50px; 
+            width: 100%; 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 12px; 
+            transition: all 0.3s;
+            font-family: 'Cairo';
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+        .btn-urgent:hover:not(:disabled) { 
+            background: #128c7e; 
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.4);
+        }
+        .btn-urgent:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .privacy-note {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+        .privacy-note i {
+            color: var(--success);
+            margin-left: 5px;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: var(--white);
+            padding: 50px 8%;
+            text-align: center;
+        }
+        .benefits h3 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .benefit-item {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+        }
+        .benefit-item i {
+            font-size: 2rem;
+            color: var(--success);
+            margin-bottom: 10px;
+        }
+        .benefit-item strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Back Link */
+        .back-link {
+            text-align: center;
+            padding: 30px;
+        }
+        .back-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        .back-link a:hover {
+            color: var(--secondary);
+        }
+        .back-link a i {
+            margin-right: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .urgency-bar {
+                font-size: 1rem;
+                padding: 10px 3%;
+            }
+            .hero-urgent {
+                padding: 40px 5%;
+            }
+            .pain-points {
+                padding: 30px 5%;
+                gap: 20px;
+            }
+            .solution-box {
+                padding: 40px 5%;
+            }
+            .form-container {
+                margin: -60px 5% 40px;
+                padding: 30px 20px;
+            }
+            .btn-urgent {
+                font-size: 1.2rem;
+                padding: 18px;
+            }
+        }
+
+        /* Accessibility */
+        *:focus-visible {
+            outline: 3px solid var(--secondary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <i class="fas fa-exclamation-circle"></i>
+        هل بضاعتك عالقة في الميناء؟ هل تعاني من تأخيرات غير مبررة؟ نحن هنا للحل الفوري!
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-urgent">
+        <h1>لا تدع الغرامات تلتهم أرباحك!</h1>
+        <p>نحن نعلم أن كل يوم تأخير في الميناء يعني خسارة أموالك. في "الرائدون"، تخصصنا هو حل المشاكل التي عجز عنها الآخرون.</p>
+    </section>
+
+    <!-- Pain Points -->
+    <section class="pain-points">
+        <div class="pain-card">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>بضاعة عالقة؟</h3>
+            <p>حل مشاكل التصاريح الجمركية المعقدة في أشدود وحيفا بسرعة قصوى خلال 24-48 ساعة.</p>
+        </div>
+        <div class="pain-card">
+            <i class="fas fa-money-bill-wave"></i>
+            <h3>تكاليف أرضية عالية؟</h3>
+            <p>نتدخل لتقليل التأخير وإخراج الحاويات قبل تراكم الرسوم الإضافية التي قد تصل لآلاف الدولارات.</p>
+        </div>
+        <div class="pain-card">
+            <i class="fas fa-file-contract"></i>
+            <h3>نقص في الأوراق؟</h3>
+            <p>نساعدك في استكمال كافة المستندات المطلوبة والموافقة عليها من الجهات المختصة في أسرع وقت.</p>
+        </div>
+    </section>
+
+    <!-- Solution Box -->
+    <section class="solution-box">
+        <h2>اترك التفاصيل لنا.. وخذ "الكتف المريح" الذي تحتاجه</h2>
+        <p>أدخل تفاصيل المشكلة وسنتصل بك خلال 30 دقيقة لتقديم استشارة فنية مجانية وخطة عمل فورية.</p>
+    </section>
+
+    <!-- Urgent Form -->
+    <div class="form-container">
+        <h3>طلب مساعدة عاجلة</h3>
+        
+        <form id="urgentForm" novalidate>
+            <div class="form-group">
+                <label for="urgent_name">الاسم الكامل / اسم الشركة: <span style="color: var(--danger);">*</span></label>
+                <input 
+                    type="text" 
+                    id="urgent_name" 
+                    placeholder="اسمك الكريم أو اسم شركتك" 
+                    required
+                    aria-required="true"
+                >
+                <span id="name-error" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="urgent_phone">رقم الهاتف للتواصل الفوري: <span style="color: var(--danger);">*</span></label>
+                <input 
+                    type="tel" 
+                    id="urgent_phone" 
+                    placeholder="+970-XX-XXX-XXXX أو +972-XX-XXX-XXXX" 
+                    required
+                    aria-required="true"
+                >
+                <span id="phone-error" class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="urgent_problem">وصف المشكلة: <span style="color: var(--danger);">*</span></label>
+                <textarea 
+                    id="urgent_problem" 
+                    rows="5" 
+                    placeholder="اشرح لنا بإيجاز: أين البضاعة؟ ما نوعها؟ ما هي المشكلة بالتحديد؟"
+                    required
+                    aria-required="true"
+                ></textarea>
+                <span id="problem-error" class="error-message"></span>
+            </div>
+            
+            <button type="button" onclick="sendUrgent()" class="btn-urgent">
+                <i class="fab fa-whatsapp"></i> تحدث مع خبير الطوارئ الآن
+            </button>
+        </form>
+
+        <p class="privacy-note">
+            <i class="fas fa-shield-alt"></i>
+            خصوصية بياناتك مضمونة 100%. اتصالنا للاستشارة المجانية فقط.
+        </p>
+    </div>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <h3>لماذا تختار الرائدون لحالات الطوارئ؟</h3>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <i class="fas fa-clock"></i>
+                <strong>استجابة خلال 30 دقيقة</strong>
+                <p>نرد عليك فوراً</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-user-tie"></i>
+                <strong>خبراء متخصصون</strong>
+                <p>فريق بخبرة 15+ سنة</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-hands-helping"></i>
+                <strong>استشارة مجانية</strong>
+                <p>بدون أي التزام</p>
+            </div>
+            <div class="benefit-item">
+                <i class="fas fa-check-circle"></i>
+                <strong>حلول مضمونة</strong>
+                <p>نجاح 98% في الحالات</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Main Site -->
+    <div class="back-link">
+        <a href="index.html">
+            <i class="fas fa-arrow-right"></i> العودة للموقع الرئيسي
+        </a>
+    </div>
+
+    <script>
+        // Validation helper functions
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, m => map[m]);
+        }
+
+        function showError(inputId, message) {
+            const input = document.getElementById(inputId);
+            const errorSpan = document.getElementById(inputId + '-error');
+            input.classList.add('error');
+            errorSpan.textContent = message;
+            errorSpan.classList.add('show');
+        }
+
+        function clearError(inputId) {
+            const input = document.getElementById(inputId);
+            const errorSpan = document.getElementById(inputId + '-error');
+            input.classList.remove('error');
+            errorSpan.classList.remove('show');
+        }
+
+        function clearAllErrors() {
+            clearError('urgent_name');
+            clearError('urgent_phone');
+            clearError('urgent_problem');
+        }
+
+        function clearForm() {
+            document.getElementById('urgent_name').value = '';
+            document.getElementById('urgent_phone').value = '';
+            document.getElementById('urgent_problem').value = '';
+            clearAllErrors();
+        }
+
+        // Main send function
+        function sendUrgent() {
+            const phone = "972542849889";
+            const btn = document.querySelector('.btn-urgent');
+            
+            const name = document.getElementById('urgent_name').value.trim();
+            const userPhone = document.getElementById('urgent_phone').value.trim();
+            const problem = document.getElementById('urgent_problem').value.trim();
+
+            // Clear previous errors
+            clearAllErrors();
+            let hasError = false;
+
+            // Validation
+            if (name.length < 2) {
+                showError('urgent_name', 'يرجى إدخال اسم صحيح (حرفين على الأقل)');
+                hasError = true;
+            } else if (name.length > 100) {
+                showError('urgent_name', 'الاسم طويل جداً');
+                hasError = true;
+            }
+
+            if (userPhone.length < 9) {
+                showError('urgent_phone', 'يرجى إدخال رقم هاتف صحيح');
+                hasError = true;
+            } else if (userPhone.length > 20) {
+                showError('urgent_phone', 'رقم الهاتف طويل جداً');
+                hasError = true;
+            }
+
+            if (problem.length < 20) {
+                showError('urgent_problem', 'يرجى وصف المشكلة بالتفصيل (20 حرف على الأقل)');
+                hasError = true;
+            } else if (problem.length > 1000) {
+                showError('urgent_problem', 'الوصف طويل جداً');
+                hasError = true;
+            }
+
+            if (hasError) {
+                return;
+            }
+
+            // Show loading
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> جاري الإرسال...';
+
+            // Escape and encode
+            const escapedName = escapeHtml(name);
+            const escapedPhone = escapeHtml(userPhone);
+            const escapedProblem = escapeHtml(problem);
+
+            const text = encodeURIComponent(
+                "🚨 *طلب مساعدة عاجل من الموقع:*\n\n" + 
+                "*العميل:* " + escapedName + "\n" + 
+                "*الهاتف:* " + escapedPhone + "\n" + 
+                "*المشكلة:* " + escapedProblem + "\n\n" +
+                "_يرجى الرد خلال 30 دقيقة_"
+            );
+
+            // Open WhatsApp
+            setTimeout(() => {
+                window.open("https://wa.me/" + phone + "?text=" + text, "_blank", "noopener,noreferrer");
+                
+                // Reset
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="fab fa-whatsapp"></i> تحدث مع خبير الطوارئ الآن';
+                    clearForm();
+                    
+                    // Show success message
+                    alert("✅ تم إرسال طلبك بنجاح! سنتواصل معك خلال 30 دقيقة.");
+                }, 1500);
+            }, 800);
+        }
+
+        // Real-time validation
+        document.getElementById('urgent_name').addEventListener('input', function() {
+            if (this.value.trim().length >= 2) clearError('urgent_name');
+        });
+
+        document.getElementById('urgent_phone').addEventListener('input', function() {
+            if (this.value.trim().length >= 9) clearError('urgent_phone');
+        });
+
+        document.getElementById('urgent_problem').addEventListener('input', function() {
+            if (this.value.trim().length >= 20) clearError('urgent_problem');
+        });
+
+        // Add enter key support for better UX
+        document.getElementById('urgentForm').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
+                e.preventDefault();
+                sendUrgent();
+            }
+        });
+
+        console.log('%c🚨 الرائدون - خدمة الطوارئ', 'color: #e74c3c; font-size: 18px; font-weight: bold;');
+    </script>
+
+</body>
+</html>
