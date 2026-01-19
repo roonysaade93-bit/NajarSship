@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3H56RR25K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-C3H56RR25K');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الرائدون للخدمات اللوجستية | شحن دولي وتخليص جمركي في فلسطين</title>
+    <title>midANLogistic | خدمات الشحن الدولي والتخليص الجمركي</title>
     
-    <meta name="description" content="شركتنا الرائدة توفر حلول الشحن الدولي من الصين وتركيا وأوروبا إلى فلسطين. متخصصون في التخليص الجمركي في أشدود وحيفا والضفة الغربية وغزة.">
+    <meta name="description" content="midANLogistic هي شريككم اللوجستي الأول للشحن الدولي من الصين وتركيا وأوروبا. متخصصون في التخليص الجمركي والنقل البري والبحري والجوي.">
+    <meta name="keywords" content="midANLogistic, شحن دولي, تخليص جمركي, استيراد وتصدير, لوجستيات فلسطين, شحن من الصين, شحن من تركيا">
     
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <style>
         :root {
@@ -44,12 +56,20 @@
 
         .hero {
             height: 90vh;
+            position: relative;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
                         url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1350&q=80');
             background-size: cover; background-position: center;
             display: flex; justify-content: center; align-items: center;
             color: var(--white); text-align: center; padding: 0 5%;
+            overflow: hidden;
         }
+
+        .hero-video {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: cover; z-index: -1;
+        }
+
         .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; line-height: 1.2; margin-bottom: 20px; }
         .hero-content p { font-size: 1.4rem; max-width: 900px; margin-bottom: 30px; }
 
@@ -60,7 +80,6 @@
             border: none; cursor: pointer;
         }
         .btn-main:hover { transform: translateY(-3px); background: var(--white); color: var(--primary); }
-        .btn-main:disabled { background: #ccc; cursor: not-allowed; }
 
         section { padding: 100px 8%; }
         .section-title { text-align: center; margin-bottom: 60px; }
@@ -85,7 +104,6 @@
         .location-box { margin-bottom: 15px; padding: 15px; background: #f9f9f9; border-radius: 10px; }
         .location-box i { color: var(--secondary); margin-left: 10px; }
 
-        /* סטטוס הודעה */
         #message-status { display: none; text-align: center; margin-top: 20px; padding: 15px; border-radius: 10px; font-weight: bold; }
         .success-msg { display: block !important; background: #e9f7ef; color: #27ae60; }
         .error-msg { display: block !important; background: #fdeaea; color: #eb5757; }
@@ -107,20 +125,21 @@
 <body>
 
     <header>
-        <img src="Logo.jpg" alt="الرائدون للخدمات اللوجستية" class="logo-img">
+        <img src="Logo.jpg" alt="midANLogistic" class="logo-img">
         <nav class="nav-links">
             <a href="#home">الرئيسية</a>
             <a href="#services">خدماتنا</a>
-            <a href="#map">تغطيتنا</a>
+            <a href="#map">مناطق التغطية</a>
             <a href="#contact">اتصل بنا</a>
-            <a href="https://wa.me/972542849889" class="btn-main" style="padding: 10px 25px;">ابدأ استشارة</a>
+            <a href="https://wa.me/972542849889" onclick="gtag('event', 'click_start_now');" class="btn-main" style="padding: 10px 25px;">ابدأ الآن</a>
         </nav>
     </header>
 
     <section class="hero" id="home">
+        <div id="hero-media-container" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1;"></div>
         <div class="hero-content">
-            <h1>خبيرك اللوجستي الأول في فلسطين</h1>
-            <p>نربط تجارتك بالعالم من خلال شحن آمن وتخليص جمركي احترافي في الموانئ والمعابر. من الصين وتركيا مباشرة إلى مستودعاتك.</p>
+            <h1 id="hero_title">midANLogistic - شريككم اللوجستي الأول</h1>
+            <p id="hero_desc">نربط تجارتكم بالعالم من خلال حلول شحن آمنة وتخليص جمركي احترافي. خبرة واسعة في الاستيراد من الصين وتركيا مباشرة إلى مستودعاتكم.</p>
             <a href="#services" class="btn-main">اكتشف خدماتنا <i class="fas fa-arrow-left"></i></a>
         </div>
     </section>
@@ -133,18 +152,18 @@
         <div class="services-grid">
             <div class="service-card">
                 <i class="fas fa-file-invoice-dollar"></i>
-                <h3>التخليص الجمركي</h3>
-                <p>تخليص بضائعكم في موانئ أشدود وحيفا ومعبر كرم أبو سالم بكل سلاسة وقانونية.</p>
+                <h3 id="service1_title">التخليص الجمركي</h3>
+                <p id="service1_desc">إتمام كافة الإجراءات الجمركية في موانئ أشدود وحيفا ومعبر كرم أبو سالم بكل كفاءة وسرعة.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-ship"></i>
-                <h3>الشحن الدولي</h3>
-                <p>حلول الشحن البحري والجوّي من كبرى الموانئ العالمية (الصين، تركيا، أوروبا).</p>
+                <h3 id="service2_title">الشحن الدولي</h3>
+                <p id="service2_desc">خدمات الشحن البحري والجوي من مختلف دول العالم، مع تخصص دقيق في موانئ الصين وتركيا.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-truck-moving"></i>
-                <h3>التوصيل النهائي</h3>
-                <p>نقل بضائعك من الميناء إلى باب مستودعك في الضفة الغربية، غزة، أو الداخل.</p>
+                <h3 id="service3_title">النقل والتوصيل</h3>
+                <p id="service3_desc">توصيل بضائعكم من الموانئ إلى الوجهة النهائية في الضفة الغربية، غزة، وكافة المناطق.</p>
             </div>
         </div>
     </section>
@@ -158,9 +177,9 @@
             <div class="map-container" id="global-map"></div>
             <div class="map-info">
                 <h3>مراكز العمليات</h3>
-                <div class="location-box"><strong><i class="fas fa-map-marker-alt"></i> فلسطين (المقر)</strong><p>رام الله، نابلس، الخليل، غزة.</p></div>
-                <div class="location-box"><strong><i class="fas fa-warehouse"></i> الصين (غوانزو)</strong><p>تجميع الشحنات وفحص الجودة.</p></div>
-                <div class="location-box"><strong><i class="fas fa-anchor"></i> تركيا (إسطنبول)</strong><p>تصدير الملابس والمعدات الصناعية.</p></div>
+                <div class="location-box"><strong><i class="fas fa-map-marker-alt"></i> المقر الرئيسي</strong><p>فلسطين: رام الله، نابلس، الخليل، غزة.</p></div>
+                <div class="location-box"><strong><i class="fas fa-warehouse"></i> مكتب الصين</strong><p>غوانزو: تجميع الشحنات وفحص الجودة.</p></div>
+                <div class="location-box"><strong><i class="fas fa-anchor"></i> مكتب تركيا</strong><p>إسطنبول: تصدير الملابس والمعدات الصناعية.</p></div>
             </div>
         </div>
     </section>
@@ -168,33 +187,61 @@
     <section id="contact">
         <div class="section-title">
             <h2>تواصل معنا اليوم</h2>
-            <p>فريقنا جاهז للإجابة على كافة استفساراتكم الجمركية</p>
+            <p>فريق خبراء midANLogistic جاهز للرد على جميع استفساراتكم</p>
         </div>
         <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
             <form id="n8n-contact-form">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                    <input type="text" id="cust_name" placeholder="الاسم الكريم" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo;">
+                    <input type="text" id="cust_name" placeholder="الاسم الكامل" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo;">
                     <input type="tel" id="cust_phone" placeholder="رقم الهاتف" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo;">
                 </div>
-                <textarea id="cust_message" rows="5" placeholder="تفاصيل البضاعة أو الاستفسار..." required style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo; margin-bottom: 20px;"></textarea>
-                <button type="submit" id="submit-btn" class="btn-main" style="width: 100%; justify-content: center;">إرسال الطلב</button>
+                <textarea id="cust_message" rows="5" placeholder="تفاصيل الشحنة أو الاستفسار..." required style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo; margin-bottom: 20px;"></textarea>
+                <button type="submit" id="submit-btn" class="btn-main" style="width: 100%; justify-content: center;">إرسال الطلب</button>
                 <div id="message-status"></div>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 | الرائدون للخدمات اللوجستية والشحن</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 | midANLogistic للشحن والخدمات اللوجستية</p>
     </footer>
 
     <div class="contact-fixed">
-        <a href="https://wa.me/972542849889" class="float-icon whatsapp-f"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+972542849889" class="float-icon phone-f"><i class="fas fa-phone"></i></a>
+        <a href="https://wa.me/972542849889" onclick="gtag('event', 'click_whatsapp_float');" class="float-icon whatsapp-f"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+972542849889" onclick="gtag('event', 'click_phone_float');" class="float-icon phone-f"><i class="fas fa-phone"></i></a>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // מפה
+        const _supabase = supabase.createClient('https://vteknhbzapmovrxjbfer.supabase.co', 'sb_publishable_Mi27eFh0GY1IWrPlkZXxyg_RhNe4Mk0');
+
+        async function loadContent() {
+            const { data } = await _supabase.from('site_cotent').select('*');
+            if (data) {
+                data.forEach(item => {
+                    const el = document.getElementById(item.key);
+                    if (item.type === 'video') {
+                        renderMedia(item.content);
+                    } else if (el) {
+                        el.innerText = item.content;
+                    }
+                });
+            }
+        }
+
+        function renderMedia(url) {
+            const container = document.getElementById('hero-media-container');
+            if (!url) return;
+            if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                let videoId = url.split('v=')[1] || url.split('/').pop();
+                container.innerHTML = `<iframe class="hero-video" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0" allow="autoplay; encrypted-media"></iframe>`;
+            } else {
+                container.innerHTML = `<video class="hero-video" autoplay muted loop playsinline><source src="${url}" type="video/mp4"></video>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadContent);
+
         var map = L.map('global-map').setView([25, 40], 3);
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png').addTo(map);
         var locations = [
@@ -204,21 +251,18 @@
         ];
         locations.forEach(function(loc) { L.marker(loc.pos).addTo(map).bindPopup("<b>" + loc.name + "</b>"); });
 
-        // לוגיקת שליחת טופס - TEST URL
         document.getElementById('n8n-contact-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             const status = document.getElementById('message-status');
-
             btn.disabled = true;
             btn.textContent = 'جاري الإرسال...';
-            status.className = '';
-
+            
             const data = {
                 customer_name: document.getElementById('cust_name').value,
                 customer_phone: document.getElementById('cust_phone').value,
                 customer_message: document.getElementById('cust_message').value,
-                submitted_at: new Date().toLocaleString('he-IL')
+                submitted_at: new Date().toLocaleString('ar-EG')
             };
 
             try {
@@ -227,14 +271,16 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-
                 if (response.ok) {
-                    status.textContent = '✅ تم استلام طلبك! سنقوم بالرد عليك خلال دقائق.';
+                    // تسجيل نجاح إرسال النموذج في جوجل أناليتكس
+                    gtag('event', 'form_submission_success', { 'event_category': 'Contact' });
+                    
+                    status.textContent = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
                     status.className = 'success-msg';
                     this.reset();
                 } else { throw new Error(); }
             } catch (err) {
-                status.textContent = '❌ فشل الإرسال. تأكد من تفعيل وضع Test ב-n8n.';
+                status.textContent = '❌ فشل الإرسال. يرجى المحاولة لاحقاً.';
                 status.className = 'error-msg';
             } finally {
                 btn.disabled = false;
