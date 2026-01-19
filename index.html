@@ -6,7 +6,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-C3H56RR25K');
     </script>
 
@@ -131,7 +130,7 @@
             <a href="#services">خدماتنا</a>
             <a href="#map">مناطق التغطية</a>
             <a href="#contact">اتصل بنا</a>
-            <a href="https://wa.me/972542849889" onclick="gtag('event', 'click_start_now');" class="btn-main" style="padding: 10px 25px;">ابدأ الآن</a>
+            <a href="https://docs.google.com/spreadsheets/d/1wyJqy0feO2WrFDh_d7jsZLnJoxFLsqFjiW82MPBus1Y/edit" target="_blank" onclick="gtag('event', 'view_excel_details');" class="btn-main" style="padding: 10px 25px;">ابدأ الآن</a>
         </nav>
     </header>
 
@@ -190,7 +189,7 @@
             <p>فريق خبراء midANLogistic جاهز للرد على جميع استفساراتكم</p>
         </div>
         <div style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <form id="n8n-contact-form">
+            <form id="google-sheets-form">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                     <input type="text" id="cust_name" placeholder="الاسم الكامل" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo;">
                     <input type="tel" id="cust_phone" placeholder="رقم الهاتف" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo;">
@@ -203,7 +202,7 @@
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 | midANLogistic للشحن والخدمات اللوجستية</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 | midANLogistic للشحن والخدمات اللوجסטية</p>
     </footer>
 
     <div class="contact-fixed">
@@ -251,7 +250,8 @@
         ];
         locations.forEach(function(loc) { L.marker(loc.pos).addTo(map).bindPopup("<b>" + loc.name + "</b>"); });
 
-        document.getElementById('n8n-contact-form').addEventListener('submit', async function(e) {
+        // פונקציית שליחה ישירה ל-Google Sheets
+        document.getElementById('google-sheets-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             const btn = document.getElementById('submit-btn');
             const status = document.getElementById('message-status');
@@ -266,19 +266,19 @@
             };
 
             try {
-                const response = await fetch('https://yastamedia.app.n8n.cloud/webhook-test/106823db-3854-4e61-92d0-6e861db618bd', {
+                // כתובת ה-Script שלך מעודכנת כאן
+                await fetch('https://script.google.com/macros/s/AKfycbxgpL-rGVcc1ULRfaFuTzDLYPtnU3jL2l-ciBcGLqxW0JrdEHPNnoS9qeorsrPgb38phQ/exec', {
                     method: 'POST',
+                    mode: 'no-cors', 
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-                if (response.ok) {
-                    // تسجيل نجاح إرسال النموذج في جوجل أناليتكس
-                    gtag('event', 'form_submission_success', { 'event_category': 'Contact' });
-                    
-                    status.textContent = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
-                    status.className = 'success-msg';
-                    this.reset();
-                } else { throw new Error(); }
+
+                gtag('event', 'form_submission_success', { 'event_category': 'Contact' });
+                status.textContent = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
+                status.className = 'success-msg';
+                this.reset();
+                
             } catch (err) {
                 status.textContent = '❌ فشل الإرسال. يرجى المحاولة لاحقاً.';
                 status.className = 'error-msg';
