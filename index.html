@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Google Tag Manager / Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C3H56RR25K"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -11,16 +12,38 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>midANLogistic - خبيرك اللوجستي الأول في فلسطين</title>
     
-    <meta name="description" content="midANLogistic هي شريككم اللوجستي الأول للشحن الدولي من الصين وتركيا وأوروبا. متخصصون في التخليص الجمركي والنقل البري والبحري والجوي.">
-    <meta name="keywords" content="midANLogistic, شحن دولي, تخليص جمركي, استيراد وتصدير, لوجستيك فلسطين, شحن من الصين, شحن من تركيا">
+    <!-- כותרת משופרת לקידום -->
+    <title>midANLogistic - شحن دولي وتخليص جمركي | أبو سنان والشمال</title>
+    
+    <!-- תיאור עשיר יותר במילות מפתח -->
+    <meta name="description" content="شركة midANLogistic في أبو سنان - الحل الأمثل للشحن الدولي من الصين وتركيا، والتخليص الجمركي في ميناء حيفا والمعابر. خدمات لوجستية متكاملة لكل منطقة الشمال والبلاد.">
     
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Schema Markup - קוד נסתר לגוגל -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LogisticsService",
+      "name": "midANLogistic",
+      "image": "Logo.jpg",
+      "description": "خدمات شحن وتخليص جمركي في أبو سنان والمنطقة الشمالية",
+      "telephone": "+972542849889",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Abu Snan",
+        "addressRegion": "North District",
+        "addressCountry": "IL"
+      },
+      "areaServed": ["Abu Snan", "Haifa", "Akko", "North District"],
+      "priceRange": "$$"
+    }
+    </script>
 
     <style>
         :root {
@@ -37,6 +60,7 @@
         body { font-family: 'Cairo', sans-serif; background: var(--light-bg); color: var(--dark-text); line-height: 1.7; overflow-x: hidden; }
         html { scroll-behavior: smooth; }
 
+        /* Header Styles */
         header {
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
@@ -53,6 +77,7 @@
         .nav-links a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 1rem; }
         .nav-links a:hover { color: var(--secondary); }
 
+        /* Hero Section */
         .hero {
             height: 90vh;
             position: relative;
@@ -80,11 +105,13 @@
         }
         .btn-main:hover { transform: translateY(-3px); background: var(--white); color: var(--primary); }
 
+        /* General Sections */
         section { padding: 100px 8%; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
         .section-title span { width: 80px; height: 4px; background: var(--secondary); display: block; margin: 0 auto; }
 
+        /* Services Grid */
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .service-card {
             background: white; padding: 40px; border-radius: 20px; text-align: center;
@@ -93,26 +120,37 @@
         .service-card:hover { transform: translateY(-10px); border-color: var(--secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
         .service-card i { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; }
 
+        /* Map Section - Updated */
         .map-section-container {
             display: grid; grid-template-columns: 1fr 350px; gap: 20px;
             background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
         .map-container { height: 500px; }
-        .map-info { padding: 30px; background: #fff; }
-        .map-info h3 { color: var(--primary); margin-bottom: 20px; font-weight: 800; }
-        .location-box { margin-bottom: 15px; padding: 15px; background: #f9f9f9; border-radius: 10px; }
+        .map-info { padding: 30px; background: #fff; display: flex; flex-direction: column; justify-content: center; }
+        .map-info h3 { color: var(--primary); margin-bottom: 20px; font-weight: 800; font-size: 1.5rem; }
+        .location-box { margin-bottom: 15px; padding: 20px; background: #f9f9f9; border-radius: 10px; border-right: 4px solid var(--secondary); }
+        .location-box strong { display: block; color: var(--primary); margin-bottom: 5px; font-size: 1.1rem; }
         .location-box i { color: var(--secondary); margin-left: 10px; }
 
+        /* FAQ Section (New) */
+        .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .faq-item { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .faq-item h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
+        .faq-item p { font-size: 0.95rem; color: #666; }
+
+        /* Contact Form */
         #message-status { display: none; text-align: center; margin-top: 20px; padding: 15px; border-radius: 10px; font-weight: bold; }
         .success-msg { display: block !important; background: #e9f7ef; color: #27ae60; }
         .error-msg { display: block !important; background: #fdeaea; color: #eb5757; }
 
+        /* Responsive */
         @media (max-width: 992px) {
             .map-section-container { grid-template-columns: 1fr; }
             header { padding: 10px 3%; }
             .nav-links { display: none; }
         }
 
+        /* Floating Buttons */
         .contact-fixed { position: fixed; bottom: 30px; left: 30px; z-index: 2000; display: flex; flex-direction: column; gap: 15px; }
         .float-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 1.8rem; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none; }
         .whatsapp-f { background: #25d366; }
@@ -128,7 +166,8 @@
         <nav class="nav-links">
             <a href="#home">الرئيسية</a>
             <a href="#services">خدماتنا</a>
-            <a href="#map">مناطق التغطية</a>
+            <a href="#map">موقعنا</a>
+            <a href="#faq">أسئلة شائعة</a>
             <a href="#contact">اتصل بنا</a>
             <a href="https://docs.google.com/spreadsheets/d/1wyJqy0feO2WrFDh_d7jsZLnJoxFLsqFjiW82MPBus1Y/edit" target="_blank" onclick="gtag('event', 'view_excel_details');" class="btn-main" style="padding: 10px 25px;">ابدأ الآن</a>
         </nav>
@@ -137,48 +176,81 @@
     <section class="hero" id="home">
         <div id="hero-media-container" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1;"></div>
         <div class="hero-content">
-            <h1 id="hero_title">midANLogistic - خبيرك اللوجستي الأول في فلسطين</h1>
-            <p id="hero_desc">نربط تجارتكم بالعالم من خلال حلول شحن آمنة وتخليص جمركي احترافي. خبرة واسعة في الاستيراد من الصين وتركيا مباشرة إلى مستودعاتكم.</p>
+            <h1 id="hero_title">midANLogistic - بوابتك اللوجستية في الشمال</h1>
+            <p id="hero_desc">من أبو سنان إلى العالم. نربط تجارتكم بالأسواق العالمية من خلال حلول شحن آمنة وتخليص جمركي احترافي في ميناء حيفا وكافة المعابر.</p>
             <a href="#services" class="btn-main">اكتشف خدماتنا <i class="fas fa-arrow-left"></i></a>
         </div>
     </section>
 
     <section id="services">
         <div class="section-title">
-            <h2>خدماتنا اللوجستية</h2>
+            <h2>خدماتنا المتكاملة</h2>
             <span></span>
+            <p style="max-width: 600px; margin: 20px auto 0; color: #666;">نقدم حلولاً لوجستية شاملة لرجال الأعمال والتجار في منطقة الشمال والبلاد</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <i class="fas fa-file-invoice-dollar"></i>
-                <h3 id="service1_title">التخليص الجمركي</h3>
-                <p id="service1_desc">إتمام كافة الإجراءات الجمركية في موانئ أشدود وحيفا ومعبر كرم أبو سالم بكل كفاءة وسرعة.</p>
+                <i class="fas fa-file-signature"></i>
+                <h3 id="service1_title">تخليص جمركي احترافي</h3>
+                <p id="service1_desc">تخليص سريع ومهني في <strong>ميناء حيفا</strong>، أشدود، جسر الشيخ حسين ومعبر الكرامة. خبرة في التعامل مع كافة أنواع البضائع والمواصفات.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-ship"></i>
-                <h3 id="service2_title">الشحن الدولي</h3>
-                <p id="service2_desc">خدمات الشحن البحري والجوي من مختلف دول العالم، مع تخصص دقيق في موانئ الصين وتركيا.</p>
+                <i class="fas fa-globe-asia"></i>
+                <h3 id="service2_title">استيراد من الصين وتركيا</h3>
+                <p id="service2_desc">شحن بحري وجوي من المصانع العالمية مباشرة إلى مستودعك. خدمة تجميع الشحنات (Consolidation) لتوفير التكاليف.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-truck-moving"></i>
-                <h3 id="service3_title">النقل والتوصيل</h3>
-                <p id="service3_desc">توصيل بضائعكم من الموانئ إلى الوجهة النهائية في الضفة الغربية، غزة، وكافة المناطق.</p>
+                <i class="fas fa-truck-loading"></i>
+                <h3 id="service3_title">نقل وتوزيع محلي</h3>
+                <p id="service3_desc">أسطول نقل يغطي منطقة أبو سنان، عكا، وكامل منطقة الشمال والمركز. توصيل آمن وسريع لبضائعكم فور خروجها من الميناء.</p>
             </div>
         </div>
     </section>
 
+    <!-- Map Section Updated to Abu Snan -->
     <section id="map" style="background: #ececec;">
         <div class="section-title">
-            <h2>شبكة التغطية العالمية</h2>
+            <h2>موقعنا ومراكز العمليات</h2>
             <span></span>
         </div>
         <div class="map-section-container">
             <div class="map-container" id="global-map"></div>
             <div class="map-info">
-                <h3>مراكز العمليات</h3>
-                <div class="location-box"><strong><i class="fas fa-map-marker-alt"></i> المقر الرئيسي</strong><p>فلسطين: رام الله، نابلس، الخليل، غزة.</p></div>
-                <div class="location-box"><strong><i class="fas fa-warehouse"></i> مكتب الصين</strong><p>غوانزو: تجميع الشحنات وفحص الجودة.</p></div>
-                <div class="location-box"><strong><i class="fas fa-anchor"></i> مكتب تركيا</strong><p>إسطنبول: تصدير الملابس والمعدات الصناعية.</p></div>
+                <h3>تفضلوا بزيارتنا</h3>
+                <div class="location-box">
+                    <strong><i class="fas fa-map-pin"></i> المكتب الرئيسي</strong>
+                    <p>أبو سنان، المنطقة الصناعية.<br>نخدمكم في موقع استراتيجي قريب من ميناء حيفا.</p>
+                </div>
+                <div class="location-box">
+                    <strong><i class="fas fa-clock"></i> ساعات العمل</strong>
+                    <p>السبت - الخميس: 09:00 - 18:00<br>الجمعة: مغلق</p>
+                </div>
+                <div class="location-box">
+                    <strong><i class="fas fa-phone-alt"></i> خدمة العملاء</strong>
+                    <p>نحن متاحون لأي استفسار عبر الهاتف أو الواتساب.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New FAQ Section for SEO -->
+    <section id="faq">
+        <div class="section-title">
+            <h2>أسئلة شائعة</h2>
+            <span></span>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>كم يستغرق الشحن من الصين؟</h4>
+                <p>الشحن البحري يستغرق عادة 25-40 يوماً حسب الميناء. الشحن الجوي أسرع ويستغرق 5-7 أيام.</p>
+            </div>
+            <div class="faq-item">
+                <h4>هل تقدمون خدمة تخليص جمركي في حيفا؟</h4>
+                <p>نعم، نحن متخصصون في التخليص الجمركي في ميناء حيفا وأشدود، ونتابع الشحنة حتى استلامها.</p>
+            </div>
+            <div class="faq-item">
+                <h4>أين يقع مكتبكم؟</h4>
+                <p>يقع مكتبنا الرئيسي في بلدة أبو سنان، ونقدم خدماتنا لكل منطقة الشمال والبلاد.</p>
             </div>
         </div>
     </section>
@@ -202,7 +274,7 @@
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 | midANLogistic للشحن والخدمات اللوجستية</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 | midANLogistic - أبو سنان</p>
     </footer>
 
     <div class="contact-fixed">
@@ -233,7 +305,7 @@
             if (!url) return;
             if (url.includes('youtube.com') || url.includes('youtu.be')) {
                 let videoId = url.split('v=')[1] || url.split('/').pop();
-                container.innerHTML = `<iframe class="hero-video" src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0" allow="autoplay; encrypted-media"></iframe>`;
+                container.innerHTML = `<iframe class="hero-video" src=" allow="autoplay; encrypted-media"></iframe>`;
             } else {
                 container.innerHTML = `<video class="hero-video" autoplay muted loop playsinline><source src="${url}" type="video/mp4"></video>`;
             }
@@ -242,19 +314,27 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadContent();
             
-            var map = L.map('global-map').setView([25, 40], 3);
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png').addTo(map);
+            // הגדרת המפה להתמקד באבו סנאן
+            // קואורדינטות: 32.9636 (רוחב), 35.1736 (אורך) - אזור אבו סנאן
+            var map = L.map('global-map').setView([32.9636, 35.1736], 13);
+            
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
             var locations = [
-                { name: "فلسطين - المركز الرئيسي", pos: [31.95, 35.23] },
-                { name: "الصين - مكتب تجميع البضائع", pos: [23.12, 113.26] },
-                { name: "تركيا - مكتب الشحن", pos: [41.00, 28.97] }
+                { name: "المكتب الرئيسي - أبو سنان", pos: [32.9636, 35.1736] },
+                { name: "ميناء حيفا (نقطة تخليص)", pos: [32.8191, 35.0125] }, // הוספתי את נמל חיפה כנקודת שירות
+                { name: "مكتب الصين", pos: [23.12, 113.26] }
             ];
-            locations.forEach(function(loc) { L.marker(loc.pos).addTo(map).bindPopup("<b>" + loc.name + "</b>"); });
+
+            locations.forEach(function(loc) { 
+                L.marker(loc.pos).addTo(map).bindPopup("<b>" + loc.name + "</b>"); 
+            });
 
             document.getElementById('google-sheets-form').addEventListener('submit', async function(e) {
                 e.preventDefault();
                 const btn = document.getElementById('submit-btn');
-                const status = document.getElementById('message-status');
                 btn.disabled = true;
                 btn.textContent = 'جاري الإرسال...';
                 
@@ -265,7 +345,6 @@
                     submitted_at: new Date().toLocaleString('ar-EG')
                 };
 
-                // שליחה לגוגל והפניה בכל מקרה
                 fetch('https://script.google.com/macros/s/AKfycbxgpL-rGVcc1ULRfaFuTzDLYPtnU3jL2l-ciBcGLqxW0JrdEHPNnoS9qeorsrPgb38phQ/exec', {
                     method: 'POST',
                     mode: 'no-cors', 
@@ -275,7 +354,6 @@
                     gtag('event', 'form_submission_success', { 'event_category': 'Contact' });
                     window.location.href = 'thanks.html';
                 }).catch((err) => {
-                    // גם במקרה של שגיאת רשת (CORS), אנחנו יודעים שהנתונים בדרך כלל מגיעים לאקסל
                     console.log("Network handled", err);
                     window.location.href = 'thanks.html';
                 });
