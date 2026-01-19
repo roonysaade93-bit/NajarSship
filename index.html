@@ -14,7 +14,7 @@
     <title>midANLogistic - خبيرك اللوجستي الأول في فلسطين</title>
     
     <meta name="description" content="midANLogistic هي شريككم اللوجستي الأول للشحن الدولي من الصين وتركيا وأوروبا. متخصصون في التخليص الجمركي والنقل البري والبحري والجوي.">
-    <meta name="keywords" content="midANLogistic, شحن دولي, تخليص جمركي, استيراد وتصدير, لوجستيات فلسطين, شحن من الصين, شحن من تركيا">
+    <meta name="keywords" content="midANLogistic, شحن دولي, تخليص جمركي, استيراد ותצדייר, לווג'יסטיקה פלסטין, שילוח מסין, שילוח מטורקיה">
     
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -195,14 +195,14 @@
                     <input type="tel" id="cust_phone" placeholder="رقم الهاتف" required style="padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo;">
                 </div>
                 <textarea id="cust_message" rows="5" placeholder="تفاصيل الشحنة أو الاستفسار..." required style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; font-family: Cairo; margin-bottom: 20px;"></textarea>
-                <button type="submit" id="submit-btn" class="btn-main" style="width: 100%; justify-content: center;">إرسال الطلب</button>
+                <button type="submit" id="submit-btn" class="btn-main" style="width: 100%; justify-content: center;">إرسال الطلב</button>
                 <div id="message-status"></div>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>جميع الحقوق محفوظة &copy; 2026 | midANLogistic للشحن والخدمات اللوجستية</p>
+        <p>جميع الحقوق محفوظة &copy; 2026 | midANLogistic للشحن והخدمות הלוגיסטיות</p>
     </footer>
 
     <div class="contact-fixed">
@@ -277,9 +277,9 @@
                     });
 
                     gtag('event', 'form_submission_success', { 'event_category': 'Contact' });
-                    status.textContent = '✅ تم استلام طلبك بنجاح! سنتواصل معك قريباً.';
-                    status.className = 'success-msg';
-                    this.reset();
+                    
+                    // העברה לדף התודה לאחר שליחה מוצלחת
+                    window.location.href = 'thanks.html';
                     
                 } catch (err) {
                     status.textContent = '❌ فشل الإرسال. يرجى المحاولة لاحقاً.';
