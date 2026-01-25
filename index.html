@@ -12,11 +12,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- החזרתי את הכותרת והתיאור המקוריים -->
     <title>midANLogistic - خبيرك اللوجستي الأول في فلسطين</title>
     
     <meta name="description" content="midANLogistic هي شريككم اللوجستي الأول للشحن الدولي من الصين وتركيا وأوروبا. متخصصون في التخليص الجمركي والنقل البري والبحري والجوي.">
-    <meta name="keywords" content="midANLogistic, شحن دولي, تخليص جمركي, استيراد وتصدير, لوجستيك فلسطين, شحن من الصين, شحن من تركيا">
+    <!-- Updated keywords to Arabic only -->
+    <meta name="keywords" content="midANLogistic, شحن دولي, تخليص جمركي, استيراد وتصدير, لوجستيات فلسطين, شحن من الصين, شحن من تركيا">
+
+    <meta property="og:title" content="midANLogistic - خبيرك اللوجستي الأول في فلسطين">
+    <meta property="og:description" content="نشحن تجارتكم من الصين وتركيا مباشرة إلى مستودعاتكم. حلول لوجستية متكاملة وتخليص جمركي احترافي.">
+    <meta property="og:image" content="Logo.jpg">
+    <meta property="og:type" content="website">
     
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,7 +29,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <!-- Schema Markup (השארתי רק את עדכון הכתובת לאבו סנאן כי זה נסתר ולא משפיע על העיצוב) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -115,7 +119,6 @@
         .service-card:hover { transform: translateY(-10px); border-color: var(--secondary); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
         .service-card i { font-size: 3rem; color: var(--secondary); margin-bottom: 20px; }
 
-        /* Map Section */
         .map-section-container {
             display: grid; grid-template-columns: 1fr 350px; gap: 20px;
             background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1);
@@ -127,7 +130,6 @@
         .location-box strong { display: block; color: var(--primary); margin-bottom: 5px; font-size: 1.1rem; }
         .location-box i { color: var(--secondary); margin-left: 10px; }
 
-        /* FAQ Section */
         .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .faq-item { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .faq-item h4 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
@@ -168,7 +170,6 @@
     <section class="hero" id="home">
         <div id="hero-media-container" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: -1;"></div>
         <div class="hero-content">
-            <!-- החזרתי את הטקסט המקורי בדיוק -->
             <h1 id="hero_title">midANLogistic - خبيرك اللوجستي الأول في فلسطين</h1>
             <p id="hero_desc">نربط تجارتكم بالعالم من خلال حلول شحن آمنة وتخليص جمركي احترافي. خبرة واسعة في الاستيراد من الصين وتركيا مباشرة إلى مستودعاتكم.</p>
             <a href="#services" class="btn-main">اكتشف خدماتنا <i class="fas fa-arrow-left"></i></a>
@@ -181,11 +182,10 @@
             <span></span>
         </div>
         <div class="services-grid">
-            <!-- החזרתי את הטקסטים המקוריים בשירותים -->
             <div class="service-card">
                 <i class="fas fa-file-invoice-dollar"></i>
                 <h3 id="service1_title">التخليص الجمركي</h3>
-                <p id="service1_desc">إتمام كافة الإجراءات الجمركية في موانئ أشدود وحيفا ومعبر كرم أبو سالم بكل كفاءة وسرعة.</p>
+                <p id="service1_desc">إتمام كافة الإجراءات الجمركية في الموانئ والمعابر بكل كفاءة وسرعة.</p>
             </div>
             <div class="service-card">
                 <i class="fas fa-ship"></i>
@@ -202,19 +202,39 @@
 
     <section id="map" style="background: #ececec;">
         <div class="section-title">
-            <h2>موقعنا ومراكز العمليات</h2>
+            <!-- Removed Hebrew text -->
+            <h2>ساعات العمل والاتصال</h2>
             <span></span>
         </div>
         <div class="map-section-container">
             <div class="map-container" id="abusnan-map"></div>
             <div class="map-info">
-                <h3>مراكز العمليات</h3>
+                <!-- Removed Hebrew text -->
+                <h3>معلومات التواصل</h3>
+                
                 <div class="location-box">
-                    <strong><i class="fas fa-map-marker-alt"></i> المقر الرئيسي</strong>
-                    <p>أبو سنان، المنطقة الصناعية.<br>قريب من ميناء حيفا.</p>
+                    <!-- Removed Hebrew text -->
+                    <strong><i class="fas fa-clock"></i> ساعات العمل</strong>
+                    <p>الأحد - الخميس: 08:00 - 17:00<br>الجمعة: 08:00 - 13:00</p>
                 </div>
-                <div class="location-box"><strong><i class="fas fa-warehouse"></i> مكتب الصين</strong><p>غوانزو: تجميع الشحنات وفحص الجودة.</p></div>
-                <div class="location-box"><strong><i class="fas fa-anchor"></i> مكتب تركيا</strong><p>إسطنبول: تصدير الملابس والمعدات الصناعية.</p></div>
+
+                <div class="location-box">
+                    <!-- Removed Hebrew text -->
+                    <strong><i class="fas fa-phone-alt"></i> رقم الهاتف</strong>
+                    <p dir="ltr">+972 54-284-9889</p>
+                </div>
+
+                <div class="location-box">
+                    <!-- Removed Hebrew text -->
+                    <strong><i class="fas fa-envelope"></i> البريد الإلكتروني</strong>
+                    <p>info@midanlogistic.org</p>
+                </div>
+
+                <div class="location-box">
+                    <!-- Removed Hebrew text -->
+                    <strong><i class="fas fa-map-marker-alt"></i> الموقع</strong>
+                    <p>أبو سنان، المنطقة الصناعية</p>
+                </div>
             </div>
         </div>
     </section>
@@ -230,12 +250,13 @@
                 <p>الشحن البحري يستغرق عادة 25-40 يوماً حسب الميناء. الشحن الجوي أسرع ويستغرق 5-7 أيام.</p>
             </div>
             <div class="faq-item">
-                <h4>هل تقدمون خدمة تخليص جمركي في حيفا؟</h4>
-                <p>نعم، نحن متخصصون في التخليص الجمركي في ميناء حيفا وأشدود، ونتابع الشحنة حتى استلامها.</p>
+                <h4>هل تقدمون خدمة تخليص جمركي؟</h4>
+                <p>نعم، نحن متخصصون في التخليص الجمركي في كافة الموانئ والمعابر، ونتابع الشحنة حتى استلامها.</p>
             </div>
             <div class="faq-item">
                 <h4>أين يقع مكتبكم؟</h4>
-                <p>يقع مكتبنا الرئيسي في بلدة أبو سنان، ونقدم خدماتنا لكل منطقة الشمال والبلاد.</p>
+                <!-- Removed Hebrew text mixed inside Arabic -->
+                <p>يقع مكتبنا الرئيسي في بلدة أبو سنان، ونحن نقدم خدماتنا لكافة المناطق.</p>
             </div>
         </div>
     </section>
@@ -299,7 +320,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadContent();
             
-            // מפה ממוקדת באבו סנאן - כמו שביקשת
             var map = L.map('abusnan-map').setView([32.9646, 35.1753], 14);
             
             L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
