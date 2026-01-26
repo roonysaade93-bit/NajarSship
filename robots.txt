@@ -1,0 +1,14 @@
+# robots.txt for midanlogistic.org
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://midanlogistic.org/sitemap.xml
+
+# Disallow sensitive areas (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, can help with server load)
+# Crawl-delay: 10
